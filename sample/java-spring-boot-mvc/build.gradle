@@ -85,15 +85,14 @@ sourceSets {
 def generateSwagger = swagger {
     apiSource {
         attachSwaggerArtifact = true
-        locations = ['com.benjaminsproule.public']
+        locations = ['com.benjaminsproule.sample.springboot.mvc']
         swaggerDirectory = "${swaggerDirectory}"
         swaggerFileName = 'publicSwagger'
         
         springmvc = true
-        locations = ['com.benjaminsproule.sample']
         schemes = ['http', 'https']
-        host = 'www.example.com:8080'
-        basePath = '/sample'
+        // host = 'www.example.com:8080'
+        // basePath = '/sample'
         info {
             title = 'Swagger Gradle Plugin Sample'
             version = 'v1'
@@ -143,11 +142,9 @@ task initOpenApi() {
     }
 }
 
-/*
 springBoot {
-    // mainClass = "com.benjaminsproule.sample.springboot.mvc.SampleApplication"
+    mainClassName = "com.benjaminsproule.sample.springboot.mvc.SampleApplication"
 }
- */
 
 // generateApi.dependsOn initOpenApi
 // build.dependsOn generateApi
